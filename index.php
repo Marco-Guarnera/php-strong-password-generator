@@ -33,7 +33,23 @@
         <h1 class="text-center">PHP Password Generator</h1>
     </header>
     <!-- Main -->
-    <main></main>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-3">
+                    <!-- Form -->
+                    <form action="index.php" method="get">
+                        <div class="mb-3">
+                            <label for="password-length" class="form-label">Password length:</label>
+                            <input type="number" id="password-length" class="form-control" name="password-length" placeholder="Password length">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                        <button type="reset" class="btn btn-secondary">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
