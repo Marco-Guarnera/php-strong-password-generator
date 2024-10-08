@@ -2,10 +2,9 @@
 
 // Fase di preparazione
 
+session_start();
+
 // Variabili
-
-$password_length = $_GET['password-length'];
-
 // Strutture dati
 
 // Funzioni
@@ -14,6 +13,12 @@ require_once __DIR__ . '/functions.php';
 
 // Fase di raccolta dati
 // Fase di elaborazione
+
+if (isset($_GET['password-length']) && !empty($_GET['password-length'])) {
+    $password_length = $_GET['password-length'];
+    $_SESSION['password'] = getRandomPassword($password_length);
+    header('Location: password.php');
+}
 
 ?>
 
@@ -52,7 +57,6 @@ require_once __DIR__ . '/functions.php';
                         <button type="submit" class="btn btn-primary">Send</button>
                         <button type="reset" class="btn btn-secondary">Cancel</button>
                     </form>
-                    <span>Password: <?= getRandomPassword($password_length) ?></span>
                 </div>
             </div>
         </div>
